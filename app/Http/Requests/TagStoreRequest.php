@@ -13,6 +13,10 @@ class TagStoreRequest extends FormRequest
      */
     public function authorize()
     {
+    	/*
+    	 * por defecto esta a false
+    	 * ponemos a true para activar la validacion
+    	 */
         return true;
     }
 
