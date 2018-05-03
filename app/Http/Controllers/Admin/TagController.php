@@ -3,10 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TagStoreRequest;
 use App\Http\Requests\TagUpdateRequest;
+
 use App\Tag;
+
+
 
 class TagController extends Controller
 {
@@ -19,11 +23,11 @@ class TagController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
     	$tags = Tag::orderBy('id', 'DESC')->paginate();
-    	//dd($tags);
-        return view('admin.tags.index', compact($tags));
+    	return view('admin.tags.index', compact('tags'));
     }
 
     /**
